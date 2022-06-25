@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data >
+			<record id="avancement_search" model="ir.ui.view">
+				<field name="name">hr.avancement.search</field>
+				<field name="model">hru.avancement</field>
+				<field name="arch" type="xml">
+					<search>
+					  <field name="fonction_id"/>
+					  <field name="corps_id_src"/>
+					  <field name="cadre_id_src"/>
+					  <field name="grade_id_src"/>
+					  <field name="categorie_id_src"/>
+					  <field name="echelle_id_src"/>
+					  <field name="echelon_id_src"/>
+					  <field name="indice_src"/>
+					  <field name="corps_id_des"/>
+					  <field name="cadre_id_des"/>
+					  <field name="grade_id_des"/>
+					  <field name="categorie_id_des"/>
+					  <field name="echelle_id_des"/>
+					  <field name="echelon_id_des"/>
+					  <field name="indice_des"/>
+					  <field name="duree"/>
+					  <field name="state"/>
+					
+    
+					</search>
+				</field>
+			</record>
+			<record id="avancement_tree" model="ir.ui.view">
+				<field name="name">hr.avancement.tree</field>
+				<field name="model">hru.avancement</field>
+				<field name="arch" type="xml">
+					<tree>
+					
+					<field name="fonction_id"/>
+					  <field name="corps_id_src"/>
+					  <field name="cadre_id_src"/>
+					  
+					  <field name="grade_id_src"/>
+					  <field name="categorie_id_src"/>
+					  <field name="echelle_id_src"/>
+					  <field name="echelon_id_src"/>
+					  <field name="indice_src"/>
+					  <field name="corps_id_des"/>
+					  <field name="cadre_id_des"/>
+					  <field name="grade_id_des"/>
+					  <field name="categorie_id_des"/>
+					  <field name="echelle_id_des"/>
+					  <field name="echelon_id_des"/>
+					  <field name="indice_des"/>
+					  <field name="duree"/>
+					  <field name="state"/>
+					
+					</tree>
+				</field>
+			</record>
+			<record id="avancement_form" model="ir.ui.view">
+			<field name="name">hr.avancement.form</field>
+			<field name="model">hru.avancement</field>
+			<field name="arch" type="xml">
+					<form>
+						<sheet>
+							<group>
+							
+								<field name="fonction_id"/>
+					  <field name="corps_id_src"/>
+					  <field name="cadre_id_src"/>
+					  <field name="grade_id_src"/>
+					  <field name="categorie_id_src"/>
+					  <field name="echelle_id_src"/>
+					  <field name="echelon_id_src"/>
+					  <field name="indice_src"/>
+					  <field name="corps_id_des"/>
+					  <field name="cadre_id_des"/>
+					  <field name="grade_id_des"/>
+					  <field name="categorie_id_des"/>
+					  <field name="echelle_id_des"/>
+					  <field name="echelon_id_des"/>
+					  <field name="indice_des"/>
+					  <field name="duree"/>
+					  <field name="state"/>
+				
+
+							</group>
+						</sheet>
+					</form>
+			</field>
+			</record>
+	
+			<record id="avancement_actw" model="ir.actions.act_window">
+				<field name="name">Avancement</field>
+				<field name="res_model">hru.avancement</field>
+				<field name="view_mode">tree,form</field>
+				<field name="help" type="html">
+					<p class="o_view_nocontent_smiling_face">
+						Clicker sur Créer pour Gérer Vos avencements Echellon
+					</p>
+				</field>
+			</record>	
+						
+						<menuitem id="hr_avancement_view" 
+						parent="hr.menu_hr_root" 
+						action="avancement_actw"/>         
+
+	</data>
+</odoo>

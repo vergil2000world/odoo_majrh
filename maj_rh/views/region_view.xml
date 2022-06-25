@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<data>
+			<record id="region_search" model="ir.ui.view">
+					<field name="name">region.search</field>
+					<field name="model">majrh.region</field>
+					<field name="arch" type="xml">
+						<search>
+					
+								<field name="name_reg"/>
+						</search>
+					</field>
+            </record>
+				<record id="region_tree" model="ir.ui.view">
+					<field name="name">region.tree</field>
+					<field name="model">majrh.region</field>
+					<field name="arch" type="xml">
+						<tree>
+							
+							<field name="name_reg"/>
+							
+						</tree>
+					</field>
+                </record>
+				<record id="region_form" model="ir.ui.view">
+					<field name="name">region.form</field>
+					<field name="model">majrh.region</field>
+					<field name="arch" type="xml">
+						<form>
+							<sheet>
+								
+								<group string="Nom de region">
+									<field nolabel='1' name="name_reg"/>
+								</group>
+								
+							</sheet>
+						</form>
+					</field>
+                </record>
+				<record id="region_actw" model="ir.actions.act_window">
+					<field name="name">Region</field>
+					<field name="res_model">majrh.region</field>
+					<field name="view_mode">search,tree,form</field>
+					<field name="help" type="html">
+						<p class="o_view_nocontent_smiling_face">
+							Cliquer sur Créer pour ajouter une nouvelle region
+						</p>
+					</field>
+				</record>
+				<menuitem id="hr_config_view" 
+						parent="hr.menu_hr_root" 
+						name="Réferentiel"/> 
+				<menuitem id="region_menu" 
+					  name="Region" 
+					  parent="hr_config_view"
+					  action="region_actw"
+					  sequence="9"/>
+        </data>
+</odoo>

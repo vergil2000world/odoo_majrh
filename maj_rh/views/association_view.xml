@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<data>
+			<record id="majrh_association_search" model="ir.ui.view">
+					<field name="name">majrh.association.search</field>
+					<field name="model">majrh.association</field>
+					<field name="arch" type="xml">
+						<search>
+						
+								<field name="fonction_id"/>
+								<field name="employee_id"/>
+								<field name="date_grade"/>
+								<field name="date_echelon"/>
+						</search>
+					</field>
+            </record>
+				<record id="majrh_association_tree" model="ir.ui.view">
+					<field name="name">majrh.association.tree</field>
+					<field name="model">majrh.association</field>
+					<field name="arch" type="xml">
+						<tree>
+								<field name="fonction_id"/>
+								<field name="employee_id"/>
+								<field name="date_grade"/>
+								<field name="date_echelon"/>
+							
+						</tree>
+					</field>
+                </record>
+				<record id="majrh_association_form" model="ir.ui.view">
+					<field name="name">association.form</field>
+					<field name="model">majrh.association</field>
+					<field name="arch" type="xml">
+						<form>
+							<sheet>
+								<group >
+									<field name="fonction_id"/>
+								<field name="employee_id"/>
+								<field name="date_grade"/>
+								<field name="date_echelon"/>
+								</group>
+							</sheet>
+						</form>
+					</field>
+                </record>
+				<record id="majrh_association_actw" model="ir.actions.act_window">
+					<field name="name">Association</field>
+					<field name="res_model">majrh.association</field>
+					<field name="view_mode">search,tree,form</field>
+					<field name="help" type="html">
+						<p class="o_view_nocontent_smiling_face">
+							Clicker sur Créer pour ajouter une nouvelle Association
+						</p>
+					</field>
+				</record>
+				<menuitem id="hr_config_view" 
+						parent="hr.menu_hr_root" 
+						name="Réferentiel"/> 
+				<menuitem id="majrh_association_menu" 
+					  
+					  parent="hr_config_view"
+					  action="majrh_association_actw"
+					  sequence="9"/>
+        </data>
+</odoo>

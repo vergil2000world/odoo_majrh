@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		
+		<data>
+		
+			<record id="majrh_cadre_search" model="ir.ui.view">
+					<field name="name">majrh.cadre.search</field>
+					<field name="model">majrh.cadre</field>
+					<field name="arch" type="xml">
+						<search>
+							
+								<field name="code"/>
+								<field name="name"/>
+								<field name="corps_id"/>
+							
+						</search>
+					</field>
+                </record>
+				
+				<record id="majrh_cadre_tree" model="ir.ui.view">
+					<field name="name">majrh.cadre.tree</field>
+					<field name="model">majrh.cadre</field>
+                	
+					<field name="arch" type="xml">
+						<tree>
+							
+								<field name="code"/>
+								<field name="name"/>
+								<field name="corps_id"/>
+							
+						</tree>
+					</field>
+                </record>
+				
+				<record id="majrh_cadre_form" model="ir.ui.view">
+					<field name="name">ùajrh.cadre.form</field>
+					<field name="model">majrh.cadre</field>
+                	
+					<field name="arch" type="xml">
+						<form>
+							<sheet>
+								<group string="Code">
+									<field nolabel='1' name="code"/>
+								</group>
+								<group string="Nom de cadre">
+									<field nolabel='1' name="name"/>
+								</group>
+								<group string="Corps associé">
+									<field nolabel='1' name="corps_id"/>
+								</group>
+							</sheet>
+						</form>
+					</field>
+                </record>
+				
+				<record id="majrh_cadre_actw" model="ir.actions.act_window">
+					<field name="name">Cadre</field>
+					<field name="res_model">majrh.cadre</field>
+					<field name="view_mode">search,tree,form</field>
+					<field name="help" type="html">
+						<p class="o_view_nocontent_smiling_face">
+							Clicker sur Créer pour ajouter une nouvelle cadre
+						</p>
+					</field>
+			</record>	
+				<menuitem id="hr_config_view" 
+						parent="hr.menu_hr_root" 
+						name="Réferentiel"/>  
+			<menuitem id="majrh_cadre_menu" 
+					  name="Cadre" 
+					  parent="hr_config_view"
+					  action="majrh_cadre_actw"
+					  sequence="3"/>
+			
+			
+			
+        </data>
+</odoo>

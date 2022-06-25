@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		
+		<data>
+		
+			<record id="majrh_grade_search" model="ir.ui.view">
+					<field name="name">majrh.grade.search</field>
+					<field name="model">majrh.grade</field>
+					<field name="arch" type="xml">
+						<search>
+							
+								<field name="code"/>
+								<field name="name"/>
+								<field name="cadre_id"/>
+							
+						</search>
+					</field>
+                </record>
+				
+				<record id="majrh_grade_tree" model="ir.ui.view">
+					<field name="name">majrh.grade.tree</field>
+					<field name="model">majrh.grade</field>
+                	
+					<field name="arch" type="xml">
+						<tree>
+							
+								<field name="code"/>
+								<field name="name"/>
+								<field name="cadre_id"/>
+							
+						</tree>
+					</field>
+                </record>
+				
+				<record id="majrh_grade_form" model="ir.ui.view">
+					<field name="name">ùajrh.grade.form</field>
+					<field name="model">majrh.grade</field>
+                	
+					<field name="arch" type="xml">
+						<form>
+							<sheet>
+								<group string="Code">
+									<field nolabel='1' name="code"/>
+								</group>
+								<group string="Nom de grade">
+									<field nolabel='1' name="name"/>
+								</group>
+								<group string="cadre associé">
+									<field nolabel='1' name="cadre_id"/>
+								</group>
+							</sheet>
+						</form>
+					</field>
+                </record>
+				
+				<record id="majrh_grade_actw" model="ir.actions.act_window">
+					<field name="name">Grade</field>
+					<field name="res_model">majrh.grade</field>
+					<field name="view_mode">search,tree,form</field>
+					<field name="help" type="html">
+						<p class="o_view_nocontent_smiling_face">
+							Clicker sur Créer pour ajouter une nouvelle grade
+						</p>
+					</field>
+			</record>	
+			<menuitem id="hr_config_view" 
+						parent="hr.menu_hr_root" 
+						name="Réferentiel"/>  
+			<menuitem id="majrh_grade_menu" 
+					  name="Grade" 
+					  parent="hr_config_view"
+					  action="majrh_grade_actw"
+					  sequence="2"/>
+			
+			
+			
+        </data>
+</odoo>

@@ -1,0 +1,13 @@
+from odoo import models,fields,api
+
+class OACreatevWizard(models.TransientModel):
+    _name="oa.createv.wizard"
+    _description="Create"
+    s_id=fields.Many2one("oa.session",string="Session")
+    
+    def action_creation_apply(self):
+        leads2 = self.env['oa.score'].browse(self.env.context.get('active_ids'))
+        return leads.action_set_lost(s_id=self.s_id.id)
+    
+    
+    

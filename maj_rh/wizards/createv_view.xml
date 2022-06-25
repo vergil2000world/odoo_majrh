@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data >
+			<record id="view_createVA_form" model="ir.ui.view">
+			<field name="name">Search Avancement Form</field>
+			<field name="model">hr.avancementusms</field>
+			<field name="arch" type="xml">
+					<form string="Recherche">
+						
+							
+							<group>
+							
+								<field name="date_avancement"/>
+							</group>
+							<footer>
+								<button id="search_btn" name="search_avancement" string="Chercher" class="btn-primary" type="object"  />
+								<button  string="Annuler" class="btn-secondary"  special="cancel"  />
+								
+							</footer>
+							
+				
+					</form>
+			</field>
+			</record>
+			<record id="create_actwvergil2022" model="ir.actions.act_window">
+				<field name="name">Search V</field>
+				<field name="type">ir.actions.act_window</field>
+				<field name="res_model">hr.avancementusms</field>
+				<field name="view_mode">form</field>
+				<field name="view_id" ref="view_createVA_form"/>
+			    <field name="target">new</field>
+				
+			</record>	
+	</data>
+</odoo>

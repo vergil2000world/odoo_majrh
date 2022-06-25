@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		<data>
+			<record id="majrh_qualifications_search" model="ir.ui.view">
+					<field name="name">majrh.qualifications.search</field>
+					<field name="model">majrh.qualifications</field>
+					<field name="arch" type="xml">
+						<search>
+								<field name="id12"/>
+								<field name="name"/>
+						</search>
+					</field>
+            </record>
+				<record id="majrh_qualifications_tree" model="ir.ui.view">
+					<field name="name">majrh.qualifications.tree</field>
+					<field name="model">majrh.qualifications</field>
+					<field name="arch" type="xml">
+						<tree>
+								<field name="id12"/>
+								<field name="name"/>
+							
+						</tree>
+					</field>
+                </record>
+				<record id="majrh_qualifications_form" model="ir.ui.view">
+					<field name="name">qualifications.form</field>
+					<field name="model">majrh.qualifications</field>
+					<field name="arch" type="xml">
+						<form>
+							<sheet>
+								<group string="ID">
+									<field nolabel='1' name="id12"/>
+								</group>
+								<group string="Nom">
+									<field nolabel='1' name="name"/>
+								</group>
+							</sheet>
+						</form>
+					</field>
+                </record>
+				<record id="majrh_qualifications_actw" model="ir.actions.act_window">
+					<field name="name">Qualifications</field>
+					<field name="res_model">majrh.qualifications</field>
+					<field name="view_mode">search,tree,form</field>
+					<field name="help" type="html">
+						<p class="o_view_nocontent_smiling_face">
+							Clicker sur Créer pour ajouter une nouvelle qualification
+						</p>
+					</field>
+				</record>
+				<menuitem id="hr_config_view" 
+						parent="hr.menu_hr_root" 
+						name="Réferentiel"/> 
+				<menuitem id="majrh_qualifications_menu" 
+					  
+					  parent="hr_config_view"
+					  action="majrh_qualifications_actw"
+					  sequence="8"/>
+        </data>
+</odoo>

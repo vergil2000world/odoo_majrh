@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data >
+			<record id="fonction_search" model="ir.ui.view">
+				<field name="name">hr.fonction.search</field>
+				<field name="model">hru.fonction</field>
+				<field name="arch" type="xml">
+					<search>
+					  <field name="corps_id2"/>
+					  <field name="cadre_id2"/>
+					  <field name="grade_id2"/>
+					  <field name="categorie_id"/>
+					  <!-- <field name="date_grade"/> -->
+					  <field name="echelle_id"/>
+					  <!-- <field name="date_echelle"/> -->
+					  <field name="echelon_id"/>
+					  <field name="indice"/>
+					  <field name="state"/>
+					  <field name="avancement_ids"/>
+					
+    
+					</search>
+				</field>
+			</record>
+			<record id="fonction_tree" model="ir.ui.view">
+				<field name="name">hr.fonction.tree</field>
+				<field name="model">hru.fonction</field>
+				<field name="arch" type="xml">
+					<tree>
+					 	 <field name="categorie_id"/>
+								<field name="corps_id2"/>
+								<field name="grade_id2"/>
+					  <field name="cadre_id2"/>
+					  <!-- <field name="date_grade"/> -->
+					  <field name="echelle_id"/>
+					  <!-- <field name="date_echelle"/> -->
+					  <field name="echelon_id"/>
+					  <field name="indice"/>
+					  <field name="state"/>
+					  <field name="avancement_ids"/>
+					
+					</tree>
+				</field>
+			</record>
+			<record id="fonction_form" model="ir.ui.view">
+			<field name="name">hr.fonction.form</field>
+			<field name="model">hru.fonction</field>
+			<field name="arch" type="xml">
+					<form>
+						<sheet>
+							<group>
+						
+					  
+					  <field name="categorie_id"/></group>
+					  <group>
+								<field name="corps_id2"/></group>
+								<group><field name="grade_id2"/></group>
+					 <group> <field name="cadre_id2"/></group>
+					 <!-- <group> <field name="date_grade"/></group> -->
+					  <group><field name="echelle_id"/></group>
+					  <!-- <group><field name="date_echelle"/></group> -->
+					  <group><field name="echelon_id"/></group>
+					 <group> <field name="indice"/></group>
+					  <group><field name="state"/></group>
+					 <group> <field name="avancement_ids"/></group>
+				
+
+							
+						</sheet>
+					</form>
+			</field>
+			</record>
+	
+			<record id="fonction_actw" model="ir.actions.act_window">
+				<field name="name">Fonction</field>
+				<field name="res_model">hru.fonction</field>
+				<field name="view_mode">tree,form</field>
+				<field name="help" type="html">
+					<p class="o_view_nocontent_smiling_face">
+						Clicker sur Créer pour Gérer Vos Fonctions
+					</p>
+				</field>
+			</record>	
+						  	
+						<menuitem id="hr_fonction_view" 
+						parent="hr.menu_hr_root" 
+						action="fonction_actw"/>         
+
+	</data>
+</odoo>

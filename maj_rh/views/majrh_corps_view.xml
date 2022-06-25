@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		
+		<data>
+		
+			<record id="majrh_corps_search" model="ir.ui.view">
+					<field name="name">majrh.corps.search</field>
+					<field name="model">majrh.corps</field>
+					<field name="arch" type="xml">
+						<search>
+							
+								<field name="code"/>
+								<field name="name"/>
+								<field name="category_id"/>
+							
+						</search>
+					</field>
+                </record>
+				
+				<record id="majrh_corps_tree" model="ir.ui.view">
+					<field name="name">majrh.corps.tree</field>
+					<field name="model">majrh.corps</field>
+                	
+					<field name="arch" type="xml">
+						<tree>
+							
+								<field name="code"/>
+								<field name="name"/>
+								<field name="category_id"/>
+							
+						</tree>
+					</field>
+                </record>
+				
+				<record id="majrh_corps_form" model="ir.ui.view">
+					<field name="name">ùajrh.corps.form</field>
+					<field name="model">majrh.corps</field>
+                	
+					<field name="arch" type="xml">
+						<form>
+							<sheet>
+								<group string="Code">
+									<field nolabel='1' name="code"/>
+								</group>
+								<group string="Nom de corps">
+									<field nolabel='1' name="name"/>
+								</group>
+								<group string="Catégorie associé">
+									<field nolabel='1' name="category_id"/>
+								</group>
+							</sheet>
+						</form>
+					</field>
+                </record>
+				
+				<record id="majrh_corps_actw" model="ir.actions.act_window">
+					<field name="name">Corps</field>
+					<field name="res_model">majrh.corps</field>
+					<field name="view_mode">search,tree,form</field>
+					<field name="help" type="html">
+						<p class="o_view_nocontent_smiling_face">
+							Clicker sur Créer pour ajouter une nouvelle corps
+						</p>
+					</field>
+			</record>	
+			<menuitem id="hr_config_view" 
+						parent="hr.menu_hr_root" 
+						name="Réferentiel"/> 
+			<menuitem id="majrh_corps_menu" 
+					  name="Corps" 
+					  parent="hr_config_view"
+					  action="majrh_corps_actw"
+					  sequence="1"/>
+			
+			
+				
+			
+        </data>
+</odoo>

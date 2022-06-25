@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		
+		<data>
+				<record id="majrh_employee_form" model="ir.ui.view">
+					<field name="name">rh.employeeu.form</field>
+					<field name="model">hr.employee</field>
+                	<field name="inherit_id" ref="hr.view_employee_form"></field>
+					<field name="arch" type="xml">
+							<xpath expr="//page[@name='hr_settings']" position="after">
+									<page  string="Documents">
+									<group>
+										
+											<field name="doc_ids"  colspan="4" nolabel="1">
+												<tree>
+													<field name="name" />
+													<field name="type" />
+													<field name="file_size" />
+													
+												</tree>
+											</field>
+									</group>
+								</page>
+							</xpath>
+							
+							<xpath expr="//field[@name='image_1920']" position="after">
+											
+											<group>
+												<group>
+													<field name="name" />
+												</group>
+												<group>
+												
+												</group>
+											</group>
+											<group>
+
+												<group>
+													<field name="nom" />
+													<field name="prenom" />
+													<field name="gendre" />
+												</group>
+												<group>
+													<field name="noma" />
+													<field name="prenoma" />
+													<field name="gendre_ar" />
+												</group>
+												
+											</group>
+											<group>
+												<field name="fonction" />
+												<field name='company_id'/>
+											</group>
+
+							</xpath>
+							
+							<xpath expr="//field[@name='job_title']" position="replace">
+									
+											
+										
+											
+										  
+											
+												
+									
+							</xpath>
+							<xpath expr="//field[@name='mobile_phone']" position="before">
+									
+									<group>
+											<field name="company_id"  />
+										
+											
+											</group>
+										
+											
+										  
+											
+												
+									
+							</xpath>
+					</field>
+				</record>
+				<record id="majrh_employee_kanban" model="ir.ui.view">
+							<field name="name">rh.employee.kanban</field>
+							<field name="model">hr.employee</field>
+							<field name="inherit_id" ref="hr.hr_kanban_view_employees"></field>
+							<field name="arch" type="xml">
+									
+									<xpath expr="//field[@name='name']" position="replace">
+												<group>
+												<field name="name"  />
+												</group>
+									</xpath>
+							
+							
+							
+							</field>
+					
+						
+                </record>
+        </data>
+</odoo>

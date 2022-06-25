@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		
+		<data>
+				<record id="majrh_employee_form" model="ir.ui.view">
+					<field name="name">rh.employee.form</field>
+					<field name="model">hr.employee</field>
+                	<field name="inherit_id" ref="hr.view_employee_form"></field>
+					<field name="arch" type="xml">
+							<xpath expr="//page[@name='hr_settings']" position="after">
+									<page  string="Documents">
+									<group>
+										
+											<field name="doc_ids"  colspan="4" nolabel="1">
+												<tree>
+													<field name="name" />
+													<field name="type" />
+													<field name="file_size" />
+													
+												</tree>
+											</field>
+									</group>
+								</page>
+							</xpath>
+							
+							<xpath expr="//field[@name='image_1920']" position="after">
+											
+											<group>
+												<h1 class="d-flex">
+												<group >
+												
+													<field name="name" />
+												</group></h1>
+												<group>
+												
+												</group>
+											</group>
+											<group>
+
+												<group>
+													<field name="nom" />
+													<field name="prenom" />
+													<field name="gendre" />
+												</group>
+												<bdo dir="rtl" > <group>
+													<field name="nom_ar" />
+													<field name="prenom_ar" />
+													
+												</group></bdo>
+												
+											</group>
+										
+												<group>
+													
+										<field name="department_id2"/>
+										<field name="company_id"/>
+												</group>
+	
+												
+											
+
+							</xpath>
+							
+							<xpath expr="//field[@name='job_title']" position="replace">
+		
+							</xpath>
+							<xpath expr="//field[@name='mobile_phone']" position="replace">
+		
+							</xpath>
+							<xpath expr="//field[@name='work_phone']" position="replace">
+		
+							</xpath>
+							<xpath expr="//field[@name='work_email']" position="replace">
+							
+							
+							</xpath>
+							<xpath expr="//div[@class='oe_title']" position="replace">
+							
+							
+							</xpath>
+					
+							<xpath expr="//field[@name='department_id']" position="replace">
+		
+							</xpath> 
+							<!-- <xpath expr="//field[@name='company_id']" position="replace"> -->
+		
+							<!-- </xpath> 		 -->
+							<xpath expr="//field[@name='parent_id']" position="replace">
+		
+							</xpath>
+							<xpath expr="//field[@name='coach_id']" position="replace">
+		
+							</xpath>
+							<xpath expr="//button[@id='hr_presence_button']" position="replace">
+									
+									
+						
+                            <button name="action_open" type="object" class="oe_stat_button" icon="fa-home">
+                                <div class="o_stat_info">
+                                    <field name="company_id" class="o_stat_value"/>
+									
+                                   
+                                </div>
+                            </button>
+							<button name="action_open2" type="object" class="oe_stat_button" icon="fa-users">
+                                <div class="o_stat_info">
+                                    
+									<field name="categorie" class="o_stat_value"/>
+                                </div>
+                         
+											
+										  
+									</button>		
+												
+									
+							</xpath>
+							
+							<xpath expr="//page[@name='public']" position="replace">
+									<page string="Informations Professionnelle">
+											<group>
+											<group string="Cantact">
+											
+													<field name="address_home_id" context="{                                                 'show_address': 1,                                                 'default_type': 'private',                                                 'form_view_ref': 'base.res_partner_view_form_private'}" options="{&quot;always_reload&quot;: True, &quot;highlight_first_line&quot;: True}"/>
+                                        <field name="private_email" string="Email"/>
+                                        <field name="phone" class="o_force_ltr" groups="hr.group_hr_user" string="Phone" readonly="True"/>
+													
+											
+											
+											
+											
+											
+											</group> 
+											
+											<group string="Diplômes">
+												<field name="diplome" />
+												<field name="categorie" />
+												<field name="nb_diplome" />	
+												<field name="specialite" />	
+												<field name="universite" />	
+											</group>
+											<group string="Qualifiquations">
+                                                 <field name="name12"/>
+                                            </group>
+                                            <group string="Etablissement">
+                                                <field name="namee"/>
+                                            </group>
+											</group>
+											
+											
+											<group string="Informations de Travail  ">
+												
+												<field name="nppr" />
+												<field name="type_personne" />	
+												<field name="situation_administrative" />
+												<field name="echellon" />
+												<field name="date_echelon" />
+												
+												<field name="anciennete_echellon" />	
+												<field name="fonction" >
+													<tree>
+														<field name="grade_id2"/>
+														<!-- <field name="date_grade"/> -->
+														<field name="state"/>
+														<field name="avancement_ids"/>
+														
+													
+													
+													</tree>
+												
+												
+												
+												</field>
+												<field name="date_fonction" />	
+												
+												<field name="anciennete_grade" />
+												<field name="date_effet_grade" />
+												<field name="date_postion" />
+												<field name="d_a_menperes" />
+												
+													
+												
+													
+												<field name="date_recrutement" />	
+											
+												<field name="date_affectation_enseignement" />	
+											
+											</group>
+											
+											
+										
+									</page>		
+										  
+											
+												
+									
+							</xpath>
+							<xpath expr="//page[@name='personal_information']" position="replace">
+								<page string="Informations personelles">
+									<group>
+										<group string="Contact privé">
+											<field name="email"/>
+											<field name="tel"/>
+											<field name="adresse_fam"/>
+										</group>
+										
+										<group string="Citoyenneté">
+											<field name="cin"/>
+											<field name="nat"/>
+											<field name="nat_ar"/>
+											<field name="date_naiss"/>
+											<field name="Lieu_Naissance"/>
+											<field name="ville_id"/>
+                                            <field name="province2"/>
+                                            <field name="code2"/>
+                                            <field name="namer"/>
+										</group>
+										
+									</group>
+									<group>
+										<group string="Situation familiale">
+											<field name="situation_familiale"/>
+											<field name="situation_familiale_ar"/>
+										</group>
+
+										<group string="Contact d'urgence">
+											<field name="relation"/>
+											<field name="nom_u"/>
+											<field name="num_u"/>
+										</group>
+									</group>
+								</page>
+							</xpath>
+							
+							
+		
+							
+					</field>
+				</record>
+				<record id="majrh_employee_kanban" model="ir.ui.view">
+							<field name="name">rh.employee.kanban</field>
+							<field name="model">hr.employee</field>
+							<field name="inherit_id" ref="hr.hr_kanban_view_employees"></field>
+							<field name="arch" type="xml">
+									
+									<xpath expr="//field[@name='name']" position="replace">
+												<group>
+											<li><field name="name"  /></li>
+												</group>
+									</xpath>
+									
+									<xpath expr="//span[@class='o_kanban_record_subtitle']" position="replace">
+											<li><field name="company_id" /></li>	
+									</xpath>
+									
+									<xpath expr="//field[@name='category_ids']" position="replace">
+												<group>
+												<li><field name="situation_administrative" /></li>
+												
+												<li><field name="department_id2" /></li>
+												</group>
+									</xpath>
+									
+									<!-- <xpath expr="//field[@name='category_ids']" position="after"> -->
+												<!-- <group> -->
+												<!-- <field name="department_id" /> -->
+												<!-- </group> -->
+									<!-- </xpath> -->
+									<!-- <xpath expr="//field[@name='work_email']" position="after"> -->
+											
+												
+									<!-- </xpath> -->
+									<!-- <xpath expr="//field[@name='work_phone']" position="replace"> -->
+											
+												
+									<!-- </xpath> -->
+									<xpath expr="//li[@class='o_text_overflow']" position="replace">
+												<group>
+												<field name="private_email" />
+												</group>
+									</xpath>
+									<xpath expr="//li[@class='o_force_ltr']" position="replace">
+												<group>
+												<field name="phone" />
+												</group>
+									</xpath>
+									
+							
+							
+							
+							</field>
+					
+						
+                </record>
+				<delete model="ir.ui.menu" 
+					id="hr.menu_hr_department_tree" />
+					
+					
+			<delete model="ir.ui.menu" 
+					id="hr.menu_hr_employee" />
+			
+			<delete model="ir.ui.menu" 
+					id="hr.menu_config_plan_types" />
+					
+			<delete model="ir.ui.menu" 
+					id="hr.menu_config_plan_plan" />
+					
+			<delete model="ir.ui.menu" 
+					id="hr.menu_view_employee_category_form" />
+					
+			<delete model="ir.ui.menu" 
+					id="hr.menu_view_employee_category_form" />
+        </data>
+</odoo>

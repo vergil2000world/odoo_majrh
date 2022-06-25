@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<odoo>
+		<data>
+				<record id="res_diplome_form" model="ir.ui.view">
+					<field name="name">majrh.res.diplome.form</field>
+					<field name="model">majrh.res.diplome</field>
+					<field name="arch" type="xml">
+						<form>
+							<sheet>
+								<field name="name"/>
+							</sheet>
+						</form>
+					</field>
+				</record>
+				<record id="majrh_res_diplome_actw" model="ir.actions.act_window">
+					<field name="name">Fonction</field>
+					<field name="res_model">majrh.res.diplome</field>
+					<field name="view_mode">tree,form</field>
+					
+					<field name="help" type="html">
+						<p class="o_view_nocontent_smiling_face">
+							Cliquer sur 'Créer' pour ajouter un nouvelle diplome
+						</p>
+					</field>
+			</record>	
+		</data>
+	</odoo>

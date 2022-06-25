@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data >
+			<record id="echellon_search" model="ir.ui.view">
+				<field name="name">hr.echellon.search</field>
+				<field name="model">hr.echellon</field>
+				<field name="arch" type="xml">
+					<search>
+					  <field name="code"/>
+					  <field name="echellon"/>
+					  <field name="grade_id"/>
+					  <field name="name"/>
+					  
+					</search>
+				</field>
+			</record>
+			<record id="echellon_tree" model="ir.ui.view">
+				<field name="name">hr.echellon.tree</field>
+				<field name="model">hr.echellon</field>
+				<field name="arch" type="xml">
+					<tree>
+					  <field name="echellon"/>
+					  <field name="grade_id"/>
+
+					  <field name="code"/>
+					  <field name="name"/>
+					</tree>
+				</field>
+			</record>
+			<record id="echellon_form" model="ir.ui.view">
+			<field name="name">hr.echellon.form</field>
+			<field name="model">hr.echellon</field>
+			<field name="arch" type="xml">
+					<form>
+						<sheet>
+							<group>
+								<field name="echellon"/>
+								<field name="code"  placeholder="Code"/>
+								<field name="name"/>
+								<field name="grade_id"/>
+				
+
+							</group>
+						</sheet>
+					</form>
+			</field>
+			</record>
+	
+			<record id="echellon_actw" model="ir.actions.act_window">
+				<field name="name">Echellon</field>
+				<field name="res_model">hr.echellon</field>
+				<field name="view_mode">tree,form</field>
+				<field name="help" type="html">
+					<p class="o_view_nocontent_smiling_face">
+						Clicker sur Créer pour Gérer Vos avencements Echellon
+					</p>
+				</field>
+			</record>	
+						<menuitem id="hr_echellon_view" 
+						parent="hr.menu_hr_root" 
+						action="echellon_actw"/>         
+
+	</data>
+</odoo>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+		
+		<data>
+		
+			<record id="majrh_echelon_search" model="ir.ui.view">
+					<field name="name">majrh.echelon.search</field>
+					<field name="model">majrh.echelon</field>
+					<field name="arch" type="xml">
+						<search>
+							
+								<field name="code"/>
+								<field name="name"/>
+								<field name="grade_id"/>
+							
+						</search>
+					</field>
+                </record>
+				
+				<record id="majrh_echelon_tree" model="ir.ui.view">
+					<field name="name">majrh.echelon.tree</field>
+					<field name="model">majrh.echelon</field>
+                	
+					<field name="arch" type="xml">
+						<tree>
+								<field name="grade_id"/>
+								<field name="echelon"/>
+								<field name="code"/>
+								<field name="name"/>
+								
+							
+						</tree>
+					</field>
+                </record>
+				
+				<record id="majrh_echelon_form" model="ir.ui.view">
+					<field name="name">ùajrh.echelon.form</field>
+					<field name="model">majrh.echelon</field>
+                	
+					<field name="arch" type="xml">
+						<form>
+							<sheet>
+								<group string="Grade associé">
+									<field nolabel='1' name="grade_id"/>
+								</group>
+								<group string="Code">
+									<field nolabel='1' name="code"/>
+								</group>
+								<group string="Echelon">
+									<field nolabel='1' name="echelon"/>
+								</group>
+								<group string="Nom d'echelon">
+									<field nolabel='1' name="name"/>
+								</group>
+								
+							</sheet>
+						</form>
+					</field>
+                </record>
+				
+				<record id="majrh_echelon_actw" model="ir.actions.act_window">
+					<field name="name">Echelon</field>
+					<field name="res_model">majrh.echelon</field>
+					<field name="view_mode">search,tree,form</field>
+					<field name="help" type="html">
+						<p class="o_view_nocontent_smiling_face">
+							Clicker sur Créer pour ajouter une nouvelle Echelon
+						</p>
+					</field>
+			</record>	
+			<menuitem id="hr_config_view" 
+						parent="hr.menu_hr_root" 
+						name="Réferentiel"/> 
+			<menuitem id="majrh_echelon_menu" 
+					  name="Echelon" 
+					  parent="hr_config_view"
+					  action="majrh_echelon_actw"
+					  sequence="4"/>
+			
+			
+			
+        </data>
+</odoo>
